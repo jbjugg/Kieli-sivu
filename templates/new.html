@@ -1,3 +1,7 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
 <form action="/create" method="POST">
     <b>Valitse kieli:</b> <br>
     {% for language in languages %}
@@ -10,8 +14,9 @@
     <textarea  name="exercise" rows="10" cols="100"></textarea></p>
     <p>Palautus viimeistään:<br>
     <input type="text" name="deadline"></p>
-    <input type="hidden" name="user_id" value="{{languages.user_id}}">
+    <input type="hidden" name="user_id" value="{{user_id}}">
     <input type="submit" value="Luo tehtävä">
     
-    </form>
+</form>
     
+{% endblock %}

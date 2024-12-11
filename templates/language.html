@@ -1,13 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
 <b>Tervetuloa kieleen {{ language }} </b>
 Tästä voit luoda uuden tehtävän: <a href="/new"> Luo tehtävä </a>
 Tehtäviä: {{ counter }}
 <hr>
 {% for exercise in exercises %}
-<b>Aihe:</b> {{ exercise.topic }} 
-<b>Palautus:</b> {{ exercise.deadline }} 
+<b>Aihe:</b> {{ exercise.topic }} <br>
+<b>Palautus:</b> {{ exercise.deadline }} <br>
+<b>Tekijä: </b>{{users.username}} <br>
 <a href="/exercise/{{exercise.id}}">Valitse tehtävä</a><br>
 <a href="/result/{{exercise.id}}">Näytä vastaukset</a>
 <hr>
 {% endfor %}
-
+{% endblock %}
  

@@ -1,8 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
 <b>Tehtävä:</b> {{ exercises.topic }} <br>
 {{exercises.exercise}} <br>
-<b>Vastaukset:</b> <br>
+<b>Vastaukset:</b> <hr>
 {% for answer in answers %}
-{{answer.answer}}
+<b>Tekijä:</b> {{users.username}} <br>
+<b>Vastaus: </b> {{answer.answer}} <br>
 <form action="/create_comment" method="POST">
 <b>Kommentoi:</b> <br>
 <textarea name="comment" rows="10" cols="100"></textarea>
@@ -14,3 +18,4 @@
 <hr>
 {% endfor %}
 
+{% endblock %}

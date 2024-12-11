@@ -1,5 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
 <form action="/new_language" method="POST">
 <p> Kieli: <br>
 <input type="text" name="language"></p>
 <input type="submit" value="Lisää kieli">
 </form>
+
+<script>
+    function check(form) {
+        if (form.language.value.lenght > 20) {
+            alert("Toi ei salee oo mikää kieli");
+            return false;
+        }
+        return true;
+    }
+</script>
+{% endblock %}

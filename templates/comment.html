@@ -1,6 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<title>Kommentit:</title>
+<b>Vastaaja: </b> {{users.username}} <br>
 <b>Vastaus: </b>{{answers.answer}} <br>
-<b>Kommentit:</b>
+<b>Kommentit:</b> <hr>
 {% for comment in comments %}
+<b>Kommentoija: </b>{{users.username}} <br>
 {{comment.comment}}
 <hr>
 {% endfor %}
+{% endblock %}
